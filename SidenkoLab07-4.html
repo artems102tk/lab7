@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Мета-теги для встановлення кодування та налаштувань відображення на різних пристроях -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Заголовок сторінки -->
+    <title>Форма замовлення товару</title>
+    <!-- Стилізація сторінки -->
+    <style>
+        /* Flex контейнер для центрування вмісту по центру екрану */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Задаємо висоту контейнера як 100% висоти вікна браузера */
+            margin: 0; /* Знімаємо зовнішні відступи */
+        }
+
+        /* Вирівнювання тексту всередині форми по центру */
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Форма для замовлення товару -->
+    <form action="#" method="post">
+        <!-- Поле для введення номера банківського рахунку -->
+        <label for="bankAccount">Номер банківського рахунку:</label>
+        <input type="text" id="bankAccount" name="bankAccount" required><br><br>
+
+        <!-- Поле для введення особистого номера користувача -->
+        <label for="personalNumber">Особистий номер користувача:</label>
+        <input type="text" id="personalNumber" name="personalNumber" required><br><br>
+
+        <!-- Область для вибору товарів, можна вибрати декілька -->
+        <label>Список товарів (можна вибрати декілька):</label>
+        <!-- Чекбокси для вибору товарів -->
+        <input type="checkbox" id="product1" name="products[]" value="product1">
+        <label for="product1">Товар 1</label>
+        <input type="checkbox" id="product2" name="products[]" value="product2">
+        <label for="product2">Товар 2</label>
+        <input type="checkbox" id="product3" name="products[]" value="product3">
+        <label for="product3">Товар 3</label><br><br>
+
+        <!-- Поле для введення довільних коментарів користувача -->
+        <label for="comments">Довільні коментарі:</label>
+        <textarea id="comments" name="comments"></textarea><br><br>
+
+        <!-- Вибір виду оплати: готівковий або безготівковий -->
+        <label>Вид оплати:</label>
+        <!-- кнопки для вибору опції оплати -->
+        <input type="radio" id="cash" name="payment" value="cash">
+        <label for="cash">Готівковий</label>
+        <input type="radio" id="nonCash" name="payment" value="nonCash">
+        <label for="nonCash">Безготівковий</label><br><br>
+
+        <!-- Вибір додаткової інформації, яку користувач бажає отримати -->
+        <label>Додаткова інформація:</label><br>
+        <!-- Чекбокси для вибору додаткової інформації -->
+        <input type="checkbox" id="accountBalance" name="additionalInfo" value="accountBalance">
+        <label for="accountBalance">Залишок на рахунку</label><br>
+        <input type="checkbox" id="lastPayments" name="additionalInfo" value="lastPayments">
+        <label for="lastPayments">Список останніх виплат</label><br><br>
+
+        <!-- Кнопка для відправки замовлення -->
+        <input type="submit" value="Відправити замовлення">
+    </form>
+
+</body>
+</html>

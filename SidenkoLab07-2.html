@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма</title>
+    <style>
+        /* Стилі для центрування елементів на сторінці */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Стилі для форми */
+        form {
+            width: 50%; /* Ширина форми */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        /* Додаткові стилі */
+        label, input, textarea, select, button {
+            margin-bottom: 10px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <form action="/submit" method="post">
+
+        <!-- INPUT TEXT -->
+        <!-- Label вказує на назву поля. Атрибут for пов'язує label з полем за допомогою ID. -->
+        <label for="text-input">Текстове поле:</label>
+        <!-- INPUT з типом text для введення користувачем текстової інформації. Атрибут required вказує, що поле обов'язкове для заповнення. -->
+        <input type="text" id="text-input" name="text-input" required>
+        <br>
+
+        <!-- TEXTAREA -->
+        <!-- Label для текстової області. Атрибут rows та cols вказують на розмір текстової області. -->
+        <label for="textarea">Текстова область:</label>
+        <!-- TEXTAREA для багаторядкового введення тексту. Атрибут required вказує, що поле обов'язкове для заповнення. -->
+        <textarea id="textarea" name="textarea" rows="4" cols="50" required></textarea>
+        <br>
+
+        <!-- SELECT -->
+        <!-- Label для випадаючого списку. -->
+        <label for="select">Випадаючий список:</label>
+        <!-- SELECT з різними опціями для вибору. Атрибут required вказує, що обрана опція обов'язкова. -->
+        <select id="select" name="select" required>
+            <!-- Опції для вибору. -->
+            <option value="option1">Опція 1</option>
+            <option value="option2">Опція 2</option>
+            <option value="option3">Опція 3</option>
+        </select>
+        <br>
+
+        <!-- CHECKBOX -->
+        <label for="checkbox">Прапорець:</label>
+        <!-- INPUT з типом checkbox для вибору користувачем опції. -->
+        <input type="checkbox" id="checkbox" name="checkbox">
+        <br>
+
+        <!-- RADIO BUTTON -->
+        <!-- Label та INPUT для кожної радіо-кнопки. Радіо-кнопки з однаковим атрибутом name об'єднуються в групу, вибираючи лише одну опцію. -->
+        <label>Радіо-кнопки:</label>
+        <input type="radio" id="radio1" name="radio" value="option1">
+        <label for="radio1">Опція 1</label>
+        <input type="radio" id="radio2" name="radio" value="option2">
+        <label for="radio2">Опція 2</label>
+        <input type="radio" id="radio3" name="radio" value="option3">
+        <label for="radio3">Опція 3</label>
+        <br>
+
+        <!-- BUTTON -->
+        <!-- Кнопка з типом button. -->
+        <button type="button">Звичайна кнопка</button>
+        <br>
+
+        <!-- PASSWORD -->
+        <!-- Label для поля введення паролю. -->
+        <label for="password">Пароль:</label>
+        <!-- INPUT з типом password для введення паролю. -->
+        <input type="password" id="password" name="password" required>
+        <br>
+
+        <!-- FILE -->
+        <!-- Label для вибору файлу. -->
+        <label for="file">Виберіть файл:</label>
+        <!-- INPUT з типом file для вибору файлу. Атрибут accept вказує на допустимі типи файлів. -->
+        <input type="file" id="file" name="file" accept=".txt, .pdf" required>
+        <br>
+
+        <!-- SUBMIT BUTTON -->
+        <!-- INPUT з типом submit для відправлення форми. -->
+        <input type="submit" value="Відправити">
+
+    </form>
+
+</body>
+</html>

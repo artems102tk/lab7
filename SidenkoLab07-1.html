@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script>
+        function sendData() {
+            var form = document.getElementById('myForm');
+            form.target = '_blank'; // Відкрити у новому вікні
+            form.action = 'form.html'; // Адреса обробника
+            form.submit(); // відправлення даних форми
+            form.reset(); // очистка форми після відправлення
+        }
+    </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            width: 60%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+        }
+        pre {
+            white-space: pre-wrap;
+            margin: 0;
+        }
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<form id="myForm" action="" method="post">
+    <h2> Форма </h2>
+    <pre>
+Ваше ім'я:     <input name="name" type="text" maxlength="40" value="">
+Ваша стать:    <input type="radio" name="pol" value="male">Чоловіча
+               <input type="radio" name="pol" value="female">Жіноча
+На якому курсі Ви навчаєтесь?  
+               <select name="curs" size="1">
+                   <option value="1" selected> Перший </option>
+                   <option value="2">Другий</option>
+                   <option value="3">Третій</option>
+                   <option value="4">Четвертий</option>
+                   <option value="5">П'ятий </option>
+               </select>
+Які дисципліни ви вивчаєте на курсі?
+               <input type="checkbox" name="web" value="yes"> WEB-програмування
+               <input type="checkbox" name="eldinam" value="yes"> Технічна електродинаміка
+               <input type="checkbox" name="eldinam" value="yes"> Вступ в спеціальність
+               <input type="checkbox" name="eldinam" value="yes"> Вища математика
+               <input type="checkbox" name="eldinam" value="yes"> Історія України
+               <input type="checkbox" name="eldinam" value="yes"> Українська мова
+               <input type="checkbox" name="eldinam" value="yes"> Програмування
+Напишіть декілька слів про себе: 
+</pre>
+<textarea name="about" rows="6" cols="60" wrap="off"></textarea>
+<p><input type="button" value=" Відіслати дані " onclick="sendData()">
+    <input type="reset" value=" Очистити форму ">
+    <input type="file" name="friend" size="50" accept="припустимий тип файлу"> 
+</form>
+
+</body>
+</html>

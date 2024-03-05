@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета</title>
+    <style>
+        body {
+            background-color: #f4f4f4; /* Колір фону */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: #ffffff; /* Колір фону форми */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 70%; /* Ширина форми */
+            max-width: 600px; /* Максимальна ширина форми */
+            margin: auto; /* Центрування форми */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-collapse: collapse;
+        }
+
+        h1 {
+            text-align: center;
+            width: 100%;
+        }
+
+        label, input, select {
+            width: 45%; /* Ширина елементів форми */
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #000; /* Чорна рамка */
+            border-radius: 5px;
+            margin-bottom: 10px;
+            margin-left: auto; /* Вирівнювання по правому краю */
+            margin-right: auto; /* Вирівнювання по лівому краю */
+        }
+
+        .interests-container {
+            width: 100%;
+            text-align: center; /* Вирівнювання тексту по центру */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .interests-container input {
+            width: calc(100% - 20px); /* Розрахунок ширини з відступами */
+            margin: 10px 10px; /* Відступи від тексту для вводу */
+        }
+
+        input[type="checkbox"] {
+            margin-top: 5px;
+        }
+
+        input[type="submit"], input[type="button"] {
+            background-color: #000; /* Чорний колір фону кнопок */
+            color: #ffffff;
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%; /* Ширина кнопок - 100% від ширини контейнера */
+            margin-left: auto; /* Вирівнювання по правому краю */
+            margin-right: auto; /* Вирівнювання по лівому краю */
+        }
+
+        input[type="submit"]:hover, input[type="button"]:hover {
+            background-color: #333; /* Змінений колір фону при наведенні */
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form action="submit.php" method="post">
+        <h1>Анкета</h1>
+        <label for="surname">Прізвище:</label>
+        <input type="text" id="surname" name="surname" required>
+
+        <label for="name">Ім'я, по батькові:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="birthdate">Дата народження:</label>
+        <input type="date" id="birthdate" name="birthdate" required>
+
+        <label for="address">Домашня адреса:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="workplace">Місце навчання/роботи:</label>
+        <input type="text" id="workplace" name="workplace" required>
+
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <div class="interests-container">
+            <label for="interests">Область наукових інтересів:</label>
+            <input type="text" id="interest1" name="interests[]" required>
+            <input type="text" id="interest2" name="interests[]" required>
+            <input type="text" id="interest3" name="interests[]" required>
+            <input type="text" id="interest4" name="interests[]" required>
+            <input type="text" id="interest5" name="interests[]" required>
+            <input type="text" id="interest6" name="interests[]" required>
+        </div>
+
+        <div class="button-container">
+            <input type="submit" value="Відправити дані та перейти до 2 етапу реєстрації">
+            <input type="button" value="Відмінити введення" onclick="clearForm()">
+        </div>
+    </form>
+
+    <script>
+        function clearForm() {
+            document.getElementById("surname").value = "";
+            document.getElementById("name").value = "";
+            document.getElementById("birthdate").value = "";
+            document.getElementById("address").value = "";
+            document.getElementById("workplace").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("email").value = "";
+            document.querySelectorAll('input[type="text"]').forEach((textInput) => {
+                textInput.value = "";
+            });
+        }
+    </script>
+</body>
+</html>
